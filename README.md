@@ -1,6 +1,7 @@
 # Project: SwitchJoy
-(Homebrew - (Severe Exploits + Bricks + Bans)) + HTML/JS/CSS = Magic
----
+***(Homebrew - (Severe Exploits + Bricks + Bans)) + HTML/JS/CSS = Magic***
+
+
 ## What is it?
 
 SwitchJoy is a set of Javascript Libraries that help to make Switch Homebrew possible with only Switchbru DNS, some HTML/JS/CSS knowlege, and a Webpage!
