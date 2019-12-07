@@ -1,4 +1,5 @@
     //Lifecube is the best! Credits to lifecube for this awesome code!
+    //Example: download('the content of the file', 'filename.txt', 'text/plain');
     function download(strData, strFileName, strMimeType) {
     var D = document,
         A = arguments,
