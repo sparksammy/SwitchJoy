@@ -1,2 +1,2 @@
-# NXinNX
-i honestly dont think i can do this, but i will give it my best shot.
+# The sOS Project
+The GNU/Linux distro of the future.
