@@ -1,2 +1,2 @@
-# The sOS Project
-The GNU/Linux distro of the future.
+# Project: SwitchJoy
+(Homebrew - Severe Exploits) + WWW = Magic
