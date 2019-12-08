@@ -67,3 +67,8 @@ function download(strData, strFileName, strMimeType) {
 function writeToBody(html) {
     document.body.innerHTML = document.body.innerHTML + html.toString()
 }
+
+function overwriteBody(html) {
+    document.body.innerHTML = html.toString()
+}
+
