@@ -8,7 +8,7 @@
         return lastReadOutput;
     }
 
-
+    //Example: readDataFile("path/to/file.txt");
     function readDataFile(file)
     {
         file = file.toString;
