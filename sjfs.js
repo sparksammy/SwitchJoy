@@ -1,3 +1,24 @@
+    //Example: readTextFile("path/to/file.txt");
+    function readTextFile(file)
+    {
+        file = file.toString;
+        var file2read = new File([""], file);
+        var reader = new FileReader();
+        var lastReadOutput = reader.readAsText(file2read, "UTF-8");
+        return lastReadOutput;
+    }
+
+
+    function readDataFile(file)
+    {
+        file = file.toString;
+        var file2read = new File([""], file);
+        var reader = new FileReader();
+        var lastReadOutput = reader.readAsDataURL(file2read);
+        return lastReadOutput;
+    }
+
+
     //Lifecube is the best! Credits to lifecube for this awesome code!
     //Example: download('the content of the file', 'filename.txt', 'text/plain');
     function download(strData, strFileName, strMimeType) {
