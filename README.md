@@ -4,7 +4,7 @@
 
 ## What is it?
 
-SwitchJoy is a set of Javascript Libraries that help to make Switch Homebrew possible with only Switchbru DNS, some HTML/JS/CSS knowlege, and a Webpage!
+SwitchJoy is a set of Javascript functions that help to make Switch Homebrew possible with only Switchbru DNS, some HTML/JS/CSS knowlege, and a Webpage!
 
 ## Why?
 
