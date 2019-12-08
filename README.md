@@ -8,7 +8,7 @@ SwitchJoy is a set of Javascript Libraries that help to make Switch Homebrew pos
 
 ## Why?
 
-* Prevent (console) bans and bans
+* Prevent (console) bans
 * Help shape the future of the World Wide Web
 * No more severe exploits, we all win (Including Nintendo!) :)
 
