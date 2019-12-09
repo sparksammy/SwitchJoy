@@ -1,67 +1,36 @@
+import("sjdownloader/switchjoy-dl.js")
+var urlParams = new URLSearchParams(window.location.search); // Added, just in case someone wants to do something to the urlparams
+
+
 //Example: readTextFile("path/to/file.txt");
 function readTextFile(file) {
-    file = file.toString;
+    file = file.toString();
     var file2read = new File([""], file);
     var reader = new FileReader();
     var lastReadOutput = reader.readAsText(file2read, "UTF-8");
     return lastReadOutput;
-    }
+  }
+var varifyOutput = "";
+function varify(value) {
+  varifyOutput = value;
+}
+  
+  //Just like readTextFile("path/to/file.txt"); except based off of the WWW and needs a full URL. Also: requires JQuery
+var lastInternetText 
+function readInternetText(url) {
+  $.get('https://api.codetabs.com/v1/proxy?quest=' + url.toString(), function(data) {
+    lastInternetText = data;
+  });
+  return lastInternetText;
+}
 
 //Example: readDataFile("path/to/file.txt");
 function readDataFile(file) {
-    file = file.toString;
+    file = file.toString();
     var file2read = new File([""], file);
     var reader = new FileReader();
     var lastReadOutput = reader.readAsDataURL(file2read);
     return lastReadOutput;
-}
-
-
-//Lifecube is the best! Credits to lifecube for this awesome code!
-//Example: download('the content of the file', 'filename.txt', 'text/plain');
-function download(strData, strFileName, strMimeType) {
-    var D = document,
-        A = arguments,
-        a = D.createElement("a"),
-        d = A[0],
-        n = A[1],
-        t = A[2] || "text/plain";
-
-    //build download link:
-    a.href = "data:" + strMimeType + "charset=utf-8," + escape(strData);
-
-
-    if (window.MSBlobBuilder) { // IE10
-        var bb = new MSBlobBuilder();
-        bb.append(strData);
-        return navigator.msSaveBlob(bb, strFileName);
-    } /* end if(window.MSBlobBuilder) */
-
-
-
-    if ('download' in a) { //FF20, CH19
-        a.setAttribute("download", n);
-        a.innerHTML = "downloading...";
-        D.body.appendChild(a);
-        setTimeout(function() {
-            var e = D.createEvent("MouseEvents");
-            e.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-            a.dispatchEvent(e);
-            D.body.removeChild(a);
-        }, 66);
-        return true;
-    }; /* end if('download' in a) */
-
-
-
-    //do iframe dataURL download: (older W3)
-    var f = D.createElement("iframe");
-    D.body.appendChild(f);
-    f.src = "data:" + (A[2] ? A[2] : "application/octet-stream") + (window.btoa ? ";base64" : "") + "," + (window.btoa ? window.btoa : escape)(strData);
-    setTimeout(function() {
-        D.body.removeChild(f);
-    }, 333);
-    return true;
 }
 
 function writeToBody(html) {
@@ -72,3 +41,134 @@ function overwriteBody(html) {
     document.body.innerHTML = html.toString()
 }
 
+function randomPOS(elementID) {
+  var top=Math.floor(Math.random() * Math.floor(90));             
+  var left=Math.floor(Math.random() * Math.floor(90));                    
+  document.getElementById(elementID.toString).style.top=top+"%";                   
+  document.getElementById(elementID.toString).style.left=left+"%"
+}
+
+function pos(elementID,x,y) {
+  var top=y;             
+  var left=x;                    
+  document.getElementById(elementID.toString).style.top=top+"%";                   
+  document.getElementById(elementID.toString).style.left=left+"%"
+}
+
+// Selects a random value in a array
+// Example: randomSelectArray(Array); (Change the array!)
+function randomSelectArray(avar){ 
+  var isarray = Array.isArray(avar)
+  if (isarray == true) {
+    var rnfa = Math.floor(Math.random()*avar.length);
+    var rrfa = avar[rnfa]
+    return rrfa;
+  } else if (isarray == false){
+    console.log(`Error, ${avar} is not a Array...`);
+  }
+}
+
+
+function sleep(ms) {
+  function sleepEvent() {
+    print("Sleeping...")
+  }
+  setTimeout(sleepEvent, ms)
+}
+
+// Remade by Sparksammy
+// Example: isFunction(el)
+function isFunction(item) {
+  if (typeof item === 'function') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Removes all Elements from the page! (Please be careful when using this function!)
+// Example: clearHTML()
+function clearHTML(){ 
+  document.body.innerHTML = null;
+}
+
+// Gets the value of a attribute
+// Example: getAttribute(document.getElementById("link"), "href");
+function getAttribute(el, att) {
+  var result = el.getAttribute(att);
+  return result;
+}
+
+// Show/Hide Elements
+// Example: hideShow(el)
+function hideShow(el) {
+  if (el.style.display == 'none') {
+    el.style.display = '';
+  } else{
+    el.style.display = 'none';
+  }
+}
+
+// Example: fadeOut(el, 1000)
+function fadeOut(el, ms) {
+  elem = getElementById(el)
+  ms = parseInt(ms);
+  for (i = 0; i < (ms + 1); i++) {
+    elem.style.opacity = elem.style.opacity - (i / 100);
+    sleep(1)
+  }
+}
+
+// Example: fadeIn(el, 1000);
+function fadeIn(el, ms) {
+  elem = getElementById(el)
+  elem.style.opacity = 0;
+  ms = parseInt(ms);
+  for (i = 0; i < (ms + 1); i++) {
+    elem.style.opacity = elem.style.opacity + (i / 100);
+    sleep(1)
+  }
+}
+
+function spin(el, ms){
+  elem = getElementById(el)
+  for (i = 0; i < (ms / 360); i++) {
+    elem.style.transform = 'rotate(' + i + 'deg)';
+  }
+}
+
+
+//Eval alternative
+//Example: exec("alert('Hello, world!')")
+function exec(jsCode) {
+  js = jsCode.toString()
+  window.eval(js)
+}
+
+// Recoded by Sparksammy. (Oklomsy's version doesn't really work but he tried...)
+// Example: getFileSize(path/to/file)
+function getFileSize(file) {
+  file = file.toString();
+  var file = new File([""], file);
+  return file.getFileSize;
+}
+
+function lastModified(file) {
+  file = file.toString();
+  var file = new File([""], file);
+  return file.lastModified;
+}
+
+// Example: playAudio("https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3", 0.4)
+function playAudio(audio, speed) {
+  var ma = new Audio(audio);
+  ma.playbackRate = speed;
+  ma.play()
+}
+
+// Rewritten by Sparksammy (Oklomsy's version works but sparksammy's version was better)
+// Example: redir(url);
+function redir(url) {
+  window.location.href = url.toString();
+}
+ 
