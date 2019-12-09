@@ -1,4 +1,5 @@
 import("sjdownloader/switchjoy-dl.js")
+import("https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js")
 var urlParams = new URLSearchParams(window.location.search); // Added, just in case someone wants to do something to the urlparams
 
 
