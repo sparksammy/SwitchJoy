@@ -1,5 +1,6 @@
 import("sjdownloader/switchjoy-dl.js")
 import("https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js")
+import("https://github.com/sparksammy/joycon-gamepad/blob/master/dist/joycon-gamepad.js")
 var urlParams = new URLSearchParams(window.location.search); // Added, just in case someone wants to do something to the urlparams
 
 
