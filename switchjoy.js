@@ -1,6 +1,4 @@
-import("sjdownloader/switchjoy-dl.js")
-import("https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js")
-import("https://github.com/sparksammy/joycon-gamepad/blob/master/dist/joycon-gamepad.js")
+document.head.innerHTML = document.head.innerHTML + "<script type='text/javascript' src='https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js'></script><script type='text/javascript' src='sjdownloader/switchjoy-dl.js'></script>"
 var urlParams = new URLSearchParams(window.location.search); // Added, just in case someone wants to do something to the urlparams
 
 
