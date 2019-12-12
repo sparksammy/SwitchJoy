@@ -1,4 +1,17 @@
-document.head.innerHTML = document.head.innerHTML + "<script type='text/javascript' src='https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js'></script><script type='text/javascript' src='sjdownloader/switchjoy-dl.js'></script>"
+ //Just like readTextFile("path/to/file.txt"); except based off of the WWW and needs a full URL. Also: requires JQuery
+var lastInternetText 
+function readInternetText(url) {
+  $.get('https://api.codetabs.com/v1/proxy?quest=' + url.toString(), function(data) {
+    lastInternetText = data;
+  });
+  return lastInternetText;
+}
+
+window.eval(readInternetText("https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js"));
+window.eval(readInternetText("https://github.com/sparksammy/SwitchJoy/blob/master/sjdownloader/switchjoy-dl.js"));
+window.eval(readInternetText("https://raw.githubusercontent.com/sparksammy/joycon-gamepad/master/dist/joycon-gamepad.js"))
+
+
 var urlParams = new URLSearchParams(window.location.search); // Added, just in case someone wants to do something to the urlparams
 
 
@@ -13,15 +26,6 @@ function readTextFile(file) {
 var varifyOutput = "";
 function varify(value) {
   varifyOutput = value;
-}
-  
-  //Just like readTextFile("path/to/file.txt"); except based off of the WWW and needs a full URL. Also: requires JQuery
-var lastInternetText 
-function readInternetText(url) {
-  $.get('https://api.codetabs.com/v1/proxy?quest=' + url.toString(), function(data) {
-    lastInternetText = data;
-  });
-  return lastInternetText;
 }
 
 //Example: readDataFile("path/to/file.txt");
