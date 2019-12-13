@@ -1,6 +1,7 @@
  //Just like readTextFile("path/to/file.txt"); except based off of the WWW and needs a full URL. Also: requires JQuery
+itext = 
 function readInternetText(url) {
-  $.get('https://api.codetabs.com/v1/proxy?quest=' + url.toString(), function(data) {
+  $.get(url.toString(), function(data) {
     return data;
   });
 }
