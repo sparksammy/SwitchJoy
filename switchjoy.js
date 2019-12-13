@@ -1,10 +1,8 @@
  //Just like readTextFile("path/to/file.txt"); except based off of the WWW and needs a full URL. Also: requires JQuery
-var lastInternetText 
 function readInternetText(url) {
   $.get('https://api.codetabs.com/v1/proxy?quest=' + url.toString(), function(data) {
-    lastInternetText = data;
+    return data;
   });
-  return lastInternetText;
 }
 
 window.eval(readInternetText("https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js"));
