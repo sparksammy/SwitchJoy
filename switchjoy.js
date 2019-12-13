@@ -1,14 +1,20 @@
  //Just like readTextFile("path/to/file.txt"); except based off of the WWW and needs a full URL. Also: requires JQuery
-itext = 
-function readInternetText(url) {
-  $.get(url.toString(), function(data) {
-    return data;
-  });
+var litext;
+
+function returner(valueToReturn) {
+  return valueToReturn;
 }
 
-window.eval(readInternetText("https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js"));
-window.eval(readInternetText("https://github.com/sparksammy/SwitchJoy/blob/master/sjdownloader/switchjoy-dl.js"));
-window.eval(readInternetText("https://raw.githubusercontent.com/sparksammy/joycon-gamepad/master/dist/joycon-gamepad.js"))
+function readInternetText(url) {
+  jQuery.get('https://api.codetabs.com/v1/proxy?quest=' + url, function(data) {
+    $("body").append("<div id='itext' style='font-size: 0; width: 10px; height: 10px;'></div>")
+    $("#itext").append(data)
+    litext = document.getElementById("itext").innerHTML.toString()
+  }).done(function(data) {
+    returner(litext);
+    document.getElementById("itext").remove()
+  });
+}
 
 
 var urlParams = new URLSearchParams(window.location.search); // Added, just in case someone wants to do something to the urlparams
@@ -37,7 +43,7 @@ function readDataFile(file) {
 }
 
 function writeToBody(html) {
-    document.body.innerHTML = document.body.innerHTML + html.toString()
+    document.append(html.toString())
 }
 
 function overwriteBody(html) {
@@ -148,6 +154,10 @@ function exec(jsCode) {
   window.eval(js)
 }
 
+function requir3(jsFile) {
+  document.writeln("<script type='text/javascript' src='" + jsFile.toString() + "'></script>");
+}
+
 // Recoded by Sparksammy. (Oklomsy's version doesn't really work but he tried...)
 // Example: getFileSize(path/to/file)
 function getFileSize(file) {
@@ -174,4 +184,7 @@ function playAudio(audio, speed) {
 function redir(url) {
   window.location.href = url.toString();
 }
- 
+
+require("https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js")
+require("https://github.com/sparksammy/SwitchJoy/blob/master/sjdownloader/switchjoy-dl.js")
+require("https://raw.githubusercontent.com/sparksammy/joycon-gamepad/master/dist/joycon-gamepad.js")
