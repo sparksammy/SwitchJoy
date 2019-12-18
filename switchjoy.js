@@ -1,4 +1,9 @@
- //Just like readTextFile("path/to/file.txt"); except based off of the WWW and needs a full URL. Also: requires JQuery
+ 
+require("https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js")
+require("https://github.com/sparksammy/SwitchJoy/blob/master/sjdownloader/switchjoy-dl.js")
+require("https://raw.githubusercontent.com/sparksammy/joycon-gamepad/master/dist/joycon-gamepad.js")
+
+//Just like readTextFile("path/to/file.txt"); except based off of the WWW and needs a full URL. Also: requires JQuery
 var litext;
 
 function returner(valueToReturn) {
@@ -138,7 +143,6 @@ function fadeIn(el, ms) {
     sleep(1)
   }
 }
-
 function spin(el, ms){
   elem = getElementById(el)
   for (i = 0; i < (ms / 360); i++) {
@@ -184,7 +188,3 @@ function playAudio(audio, speed) {
 function redir(url) {
   window.location.href = url.toString();
 }
-
-require("https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js")
-require("https://github.com/sparksammy/SwitchJoy/blob/master/sjdownloader/switchjoy-dl.js")
-require("https://raw.githubusercontent.com/sparksammy/joycon-gamepad/master/dist/joycon-gamepad.js")
