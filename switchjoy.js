@@ -1,7 +1,3 @@
- 
-require("https://raw.githubusercontent.com/sparksammy/FurcodeJS/master/furcode.js")
-require("https://github.com/sparksammy/SwitchJoy/blob/master/sjdownloader/switchjoy-dl.js")
-require("https://raw.githubusercontent.com/sparksammy/joycon-gamepad/master/dist/joycon-gamepad.js")
 
 //Just like readTextFile("path/to/file.txt"); except based off of the WWW and needs a full URL. Also: requires JQuery
 var litext;
