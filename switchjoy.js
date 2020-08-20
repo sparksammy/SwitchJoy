@@ -12,7 +12,7 @@ function readInternetText(url) {
     $("#itext").append(data)
     litext = document.getElementById("itext").innerHTML.toString()
   }).done(function(data) {
-    returner(litext);
+    return litext;
     document.getElementById("itext").remove()
   });
 }
@@ -155,7 +155,8 @@ function exec(jsCode) {
 }
 
 function requir3(jsFile) {
-  document.writeln("<script type='text/javascript' src='" + jsFile.toString() + "'></script>");
+  var req = readInternetText();
+  exec(readInternetText);
 }
 
 // Recoded by Sparksammy. (Oklomsy's version doesn't really work but he tried...)
