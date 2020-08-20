@@ -14,7 +14,7 @@ function readInternetText(url) {
     setTimeout("return itext", 13);
   }
 
-  request.open("GET", "https://sparksammy.com", true);
+  request.open("GET", url, true);
 
   request.send();
 }
