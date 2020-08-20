@@ -1,20 +1,22 @@
 
 //Just like readTextFile("path/to/file.txt"); except based off of the WWW and needs a full URL. Also: requires JQuery
 var litext;
-
+var itext = "";
 function returner(valueToReturn) {
   return valueToReturn;
 }
 
 function readInternetText(url) {
-  jQuery.get('https://api.codetabs.com/v1/proxy?quest=' + url, function(data) {
-    $("body").append("<div id='itext' style='font-size: 0; width: 10px; height: 10px;'></div>")
-    $("#itext").append(data)
-    litext = document.getElementById("itext").innerHTML.toString()
-  }).done(function(data) {
-    return litext;
-    document.getElementById("itext").remove()
-  });
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    src = request.responseText;
+    itext += src;
+    setTimeout("return itext", 15);
+  }
+
+  request.open("GET", "https://sparksammy.com", true);
+
+  request.send();
 }
 
 
@@ -99,7 +101,7 @@ function isFunction(item) {
 // Removes all Elements from the page! (Please be careful when using this function!)
 // Example: clearHTML()
 function clearHTML(){ 
-  document.body.innerHTML = null;
+  document.body.innerHTML = "";
 }
 
 // Gets the value of a attribute
