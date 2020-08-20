@@ -11,7 +11,7 @@ function readInternetText(url) {
   request.onreadystatechange = function() {
     src = request.responseText;
     itext += src;
-    setTimeout("return itext", 15);
+    setTimeout("return itext", 13);
   }
 
   request.open("GET", "https://sparksammy.com", true);
