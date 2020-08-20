@@ -15,3 +15,6 @@ SwitchJoy is a set of Javascript functions that help to make Switch Homebrew pos
 ## But wait, can I do it on a LAN?
 
 Sure, but it's pretty advanced. Basically: setup a DNSMasq server with your web server's local ip pointing to conntest.nintendowifi.net (make sure to "sudo service dnsmasq restart" after editing "/etc/hosts"!) and just like that you have a basic homebrew app!
+
+# Looking for new contributors.
+Because it's hard for me to maintain a moving target, I need a break from SwitchJoy. Probably forever. So feel free to give a pull request.
