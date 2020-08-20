@@ -151,7 +151,7 @@ function spin(el, ms){
 //Example: exec("alert('Hello, world!')")
 function exec(jsCode) {
   js = jsCode.toString()
-  window.eval(js)
+  setTimeout( js, 1);
 }
 
 function requir3(jsFile) {
